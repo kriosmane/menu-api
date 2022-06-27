@@ -75,11 +75,11 @@ php artisan serve --host=127.0.0.1 --port=8000
 Run the commands below:
 
 ```bash
-./vendor/bin/phpunit tests/Feature/AuthTest
+./vendor/bin/phpunit tests/Feature/AuthTest.php
 ```
 
 ```bash
-./vendor/bin/phpunit tests/Feature/ItemTest
+./vendor/bin/phpunit tests/Feature/ItemTest.php
 ```
 
 
