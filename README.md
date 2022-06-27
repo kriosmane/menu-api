@@ -70,6 +70,19 @@ php artisan serve --host=127.0.0.1 --port=8000
 2. Visit this page [http://127.0.0.1:8000/api/documentation](http://127.0.0.1:8000/api/documentation) to access the API Documentation
 
 
+### Run Tests
+
+Run the commands below:
+
+```bash
+./vendor/bin/phpunit tests/Feature/AuthTest
+```
+
+```bash
+./vendor/bin/phpunit tests/Feature/ItemTest
+```
+
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
