@@ -25,9 +25,6 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::apiResource('/item', ItemController::class)->middleware('auth:api');
 
-/**
- * 
- */
 Route::post('/item/{item}/property', [ItemController::class, 'storeProperty']);
 Route::put('/item/{item}/property/{property}', [ItemController::class, 'updateProperty']);
 Route::delete('/item/{item}/property/{property}', [ItemController::class, 'destroyProperty']);

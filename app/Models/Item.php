@@ -22,11 +22,6 @@ class Item extends Model
 
     protected $fillable = ['name', 'description'];
 
-
-
-    /**
-     * 
-     */
     public function properties()
     {
         return $this->hasMany(\App\Models\Property::class);

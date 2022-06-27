@@ -20,9 +20,6 @@ class Property extends Model
 
     protected $fillable = ['name', 'item_id'];
 
-    /**
-     * 
-     */
     public function item()
     {
         return $this->belongsTo(\App\Models\Item::class);

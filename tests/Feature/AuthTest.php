@@ -2,8 +2,6 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class AuthTest extends TestCase
@@ -19,7 +17,7 @@ class AuthTest extends TestCase
 
         $response = $this->json('POST', '/api/register', [
             'name'  =>  $name = 'Test',
-            'email'  =>  $email = $time . 'test@example.com',
+            'email'  =>  $email = $time.'test@example.com',
             'password'  =>  $password = '123456789',
         ]);
 
@@ -32,7 +30,7 @@ class AuthTest extends TestCase
         $this->assertArrayHasKey('access_token', $response->json());
 
         // Delete users
-        \App\Models\User::where('email', $time . 'test@example.com')->delete();
+        \App\Models\User::where('email', $time.'test@example.com')->delete();
     }
 
     public function testLogin()
@@ -42,8 +40,8 @@ class AuthTest extends TestCase
         // Creating User
         \App\Models\User::create([
             'name' => 'Test',
-            'email' => $email = $time . '@example.com',
-            'password' => $password = bcrypt('123456789')
+            'email' => $email = $time.'@example.com',
+            'password' => $password = bcrypt('123456789'),
         ]);
 
         // Simulated landing
@@ -55,7 +53,7 @@ class AuthTest extends TestCase
         //Write the response in laravel.log
         \Log::info(1, [$response->getContent()]);
 
-        // Determine whether the login is successful and receive token 
+        // Determine whether the login is successful and receive token
         $response->assertStatus(200);
 
         //$this->assertArrayHasKey('token',$response->json());

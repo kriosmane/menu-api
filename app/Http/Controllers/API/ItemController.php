@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-
     /**
      * @OA\Get(
      * path="/api/item",
@@ -208,7 +207,7 @@ class ItemController extends Controller
      *          @OA\JsonContent(
      *              @OA\Property(property="message", type="string"),
      *          )
-     *         
+     *
      *       ),
      *      @OA\Response(
      *          response=422,
@@ -225,7 +224,6 @@ class ItemController extends Controller
 
         return response(['message' => 'Item deleted successfully']);
     }
-
 
     /**
      * @OA\Post(
@@ -277,7 +275,6 @@ class ItemController extends Controller
         return response(['item' => new \App\Http\Resources\ItemResource($item), 'message' => 'Property stored successfully']);
     }
 
-
     /**
      * @OA\Delete(
      * path="/api/item/{item_id}/property/{property_id}",
@@ -303,7 +300,7 @@ class ItemController extends Controller
      *          @OA\JsonContent(
      *              @OA\Property(property="message", type="string"),
      *          )
-     *         
+     *
      *       ),
      *      @OA\Response(
      *          response=422,
@@ -320,7 +317,6 @@ class ItemController extends Controller
 
         return response(['message' => 'property deleted successfully']);
     }
-
 
     /**
      * @OA\Post(
@@ -372,7 +368,6 @@ class ItemController extends Controller
         $validator = \Validator::make($data, [
             'name' => 'required',
         ]);
-
 
         if ($validator->fails()) {
             return response(['error' => $validator->errors()], 400);
