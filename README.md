@@ -41,13 +41,19 @@ DB_PASSWORD=db_password
 php artisan migrate
 ```
 
-5. Install passport
+5. Set encryption key
+
+```bash
+php artisan key:generate
+```
+
+6. Install passport
 
 ```bash
 php artisan passport:install
 ```
 
-5. Generate API documentation
+7. Generate API documentation
 
 ```bash
 php artisan l5-swagger:generate
@@ -61,7 +67,7 @@ php artisan l5-swagger:generate
 php artisan serve --host=127.0.0.1 --port=8000
 ```
 
-2. Visit this [http://127.0.0.1:8000/api/documentation](http://127.0.0.1:8000/api/documentation) to access the API Documentation
+2. Visit this page [http://127.0.0.1:8000/api/documentation](http://127.0.0.1:8000/api/documentation) to access the API Documentation
 
 
 ## Changelog
