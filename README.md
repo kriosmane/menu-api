@@ -53,6 +53,15 @@ php artisan passport:install
 php artisan l5-swagger:generate
 ```
 
+### Access API documentation
+
+1. Run the command below to start the server:
+
+```bash
+php artisan serve --host=127.0.0.1 --port=8000
+```
+
+2. Visit this [http://127.0.0.1:8000/api/documentation](http://127.0.0.1:8000/api/documentation) to access the API Documentation
 
 
 ## Changelog
